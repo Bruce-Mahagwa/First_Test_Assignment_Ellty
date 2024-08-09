@@ -1,0 +1,16 @@
+.submit_btn {
+    width: 340px;
+    height: 40px;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #FFCE22;
+    cursor: pointer;
+}
+.submit_btn:hover {
+    background: #FFD84D;
+}
+.submit_btn:active {
+    background: #FFCE22;
+}

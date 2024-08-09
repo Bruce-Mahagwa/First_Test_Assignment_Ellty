@@ -1,0 +1,67 @@
+/* utility classes */
+.center {
+    /* centers containers */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* end of utility classes */
+
+.list_item {
+    width: 370px;
+    height: 42px;
+    padding: 8px 15px 8px 22px;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.page_name {
+    width: max-content;
+    height: 18px;
+}
+.check_page {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+    border: 1px solid #CDCDCD;
+    opacity: 0.6;
+    position: relative;
+}
+.checkbox {
+    width: 100%;
+    height: 100%;
+    /* makes the default styling disappear to hide borders */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.check_page_container_large {
+    position: absolute;
+    width: 17px;
+    height: 12px;
+    border: 1px solid #E3E3E3;
+}
+.check_page_container_small {
+    position: absolute;
+    width: 14px;
+    height: 8.8px;
+    border: 1px solid #E3E3E3;
+}
+.tick_icon {
+    position: absolute;
+    display: block;
+    opacity: 0;
+}
+/* hover states */
+.check_page:hover {
+    border: 1px solid #BDBDBD;
+}
+.check_page:hover .tick_icon {
+       opacity: 0.6;
+}
+/* end of hover states */
