@@ -1,4 +1,4 @@
-/* utility classes */
+/*global utility classes */
 .center {
     /* centers containers */
     top: 50%;
@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 .page_name {
-    width: max-content;
+    width: calc(370px - 25px);
     height: 18px;
     cursor: pointer;
 }
@@ -72,16 +72,54 @@
 }
 .list_item:hover .tick_icon {
     opacity: 0.2;
-    width: 23px;
-    height: 23px;
+    width: 22px;
+    height: 22px;
 }
 /* end of hover states */
 
-.checkbox:not(:focus), .list_item:not(:hover) .checkbox {
-    border: 1px solid #CDCDCD;
-}
-/* mouse down utility states / classes */
+/* on mouse down utility states / classes */
 .check_page .show_tick_mark +.tick_icon {
+    /* show tick mark ensures the tick icon has more opacity */
     opacity: 0.8;
+    width: 22px;
+    height: 22px;
+}
+.box-shadow {
+    -webkit-box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.5);
+    border-radius: 6px;
+}
+.border-color-focus {
+    border: 1px solid #878787;
 }
  /* end of mouse down utility states / classes */
+
+ /* checked states */
+ .checkbox:checked +.check_page_container_large {
+    border: 1px solid #FFFFFF
+ }
+ .check_page:has(.checkbox:checked) {
+    background: #2469F6;
+    opacity: 0.9;
+ }
+ .checkbox:checked +.tick_icon {
+    color: #FFFFFF;
+    opacity: 1;
+    width: 22px;
+    height: 22px;
+ }
+.check_page:has(.checkbox:checked:is(:hover)) {
+    background: #5087F8;
+}
+
+ /* end of checked states */
+
+ /* unchecking states */
+ .blue-background-checked .check_page {
+    /* blue-background-state is a utility class that will be added dynamically when the user clicks to uncheck a checkbox */
+    background: #2469F6;
+    border: 3px solid #2469F6;
+    opacity: 0.9;
+ }
+ /* end of unchecking states */
