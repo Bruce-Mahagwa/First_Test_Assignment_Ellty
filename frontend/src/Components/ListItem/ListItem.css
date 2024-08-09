@@ -20,6 +20,7 @@
 .page_name {
     width: max-content;
     height: 18px;
+    cursor: pointer;
 }
 .check_page {
     width: 25px;
@@ -32,6 +33,7 @@
 .checkbox {
     width: 100%;
     height: 100%;
+    max-width: 25px;
     /* makes the default styling disappear to hide borders */
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -39,29 +41,47 @@
     border: none;
     outline: none;
     cursor: pointer;
+    /* increase z index of the input */
+    z-index: 200000000;
 }
 .check_page_container_large {
     position: absolute;
     width: 17px;
     height: 12px;
     border: 1px solid #E3E3E3;
+    opacity: 0;
+    z-index: -20000;
 }
 .check_page_container_small {
     position: absolute;
     width: 14px;
     height: 8.8px;
     border: 1px solid #E3E3E3;
+    opacity: 0;
+    z-index: -22000;
 }
 .tick_icon {
     position: absolute;
     display: block;
     opacity: 0;
+    z-index: -20000;
 }
 /* hover states */
 .check_page:hover {
     border: 1px solid #BDBDBD;
 }
-.check_page:hover .tick_icon {
-       opacity: 0.6;
+.list_item:hover .tick_icon {
+    opacity: 0.2;
+    width: 23px;
+    height: 23px;
 }
 /* end of hover states */
+
+.checkbox:not(:focus), .list_item:not(:hover) .checkbox {
+    border: 1px solid #CDCDCD;
+}
+/* mouse down utility states / classes */
+.check_page .show_tick_mark +.tick_icon {
+    opacity: 0.8;
+}
+ /* end of mouse down utility states / classes */
