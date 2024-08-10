@@ -4,42 +4,35 @@ import "./normalize.css"
 // components
 import Button from './Components/Button/Button';
 import ListItem from './Components/ListItem/ListItem';
-// hooks
-import { useState } from 'react';
+
 function App() {
-  const [checkBoxStyles, setCheckBoxStyles] = useState([])
-  const [largeContainerStyles, setLargeContainerStyles] = useState([])
-
   function onMouseUp(e) {
-    const element = e.currentTarget?.childNodes[1]?.childNodes[0];
-        if (element) {
-            if (element?.checked) {
-                element.classList.remove("show_tick_mark")
-            }
-            else {
-                element.classList.remove("box-shadow")
-                element.classList.remove("show_tick_mark")
-            }
+    // onMouseUp: handles actions when a user's mouse is released from within the form element
+    // 1. Selects the checkbox element using DOM traversal
+    // 2. Ascertains whether the checkbox has been released and styles accordingly
+    const checkbox = e.currentTarget?.childNodes[1]?.childNodes[0];
+    if (checkbox) {
+        if (checkbox?.checked) {
+            checkbox.classList.remove("show_tick_mark")
         }
-      setLargeContainerStyles((prev) => {
-          return (
-              ""
-          )
-      })
+        else {
+            checkbox.classList.remove("box-shadow")
+            checkbox.classList.remove("show_tick_mark")
+        }
+    }
+    // 3. Selects the container with the className=check_page_container_large
+    // 4. Removes a class on mouseup
+    const large_container = e.currentTarget?.childNodes[1]?.lastElementChild;
+    if (large_container) {
+        large_container.classList.remove("border-color-focus");
+    }
   }
-
   return (
     <>
-    <main className = "main_container"
-    onMouseMove = {onMouseUp}
-    // we set an onMouseMove handler incase the user drags the mouse accross several list element
-    >
+    <main className = "main_container">
+      <div className = "bg"></div>
       <form className = "form">
         <ListItem 
-        checkBoxStyles = {checkBoxStyles}
-        setCheckBoxStyles ={setCheckBoxStyles}
-        largeContainerStyles={largeContainerStyles}
-        setLargeContainerStyles={setLargeContainerStyles}
         onMouseUp = {onMouseUp}
         htmlFor={"all_pages"}
         label = {"All Pages"}
@@ -49,37 +42,21 @@ function App() {
           <div className = "border"></div>
         </div>
         <ListItem 
-        checkBoxStyles = {checkBoxStyles}
-        setCheckBoxStyles ={setCheckBoxStyles}
-        largeContainerStyles={largeContainerStyles}
-        setLargeContainerStyles={setLargeContainerStyles}
         onMouseUp = {onMouseUp}
         htmlFor={"page_1"}
         label={"Page 1"}
         />
         <ListItem 
-        checkBoxStyles = {checkBoxStyles}
-        setCheckBoxStyles ={setCheckBoxStyles}
-        largeContainerStyles={largeContainerStyles}
-        setLargeContainerStyles={setLargeContainerStyles}
         onMouseUp = {onMouseUp}
         htmlFor={"page_2"}
         label={"Page 2"}
         />
         <ListItem 
-        checkBoxStyles = {checkBoxStyles}
-        setCheckBoxStyles ={setCheckBoxStyles}
-        largeContainerStyles={largeContainerStyles}
-        setLargeContainerStyles={setLargeContainerStyles}
         onMouseUp = {onMouseUp}
         htmlFor={"page_3"}
         label={"Page 3"}
         />
         <ListItem 
-        checkBoxStyles = {checkBoxStyles}
-        setCheckBoxStyles ={setCheckBoxStyles}
-        largeContainerStyles={largeContainerStyles}
-        setLargeContainerStyles={setLargeContainerStyles}
         onMouseUp = {onMouseUp}
         htmlFor={"page_4"}
         label={"Page 4"}
