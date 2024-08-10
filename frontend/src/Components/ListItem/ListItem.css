@@ -130,10 +130,10 @@
  /* end of checked states */
 
  /* unchecking states */
- .blue-background-checked .check_box {
+ .blue-background-checked {
     /* blue-background-state is a utility class that will be added dynamically when the user clicks to uncheck a checkbox */
-    background: #2469F6;
-    border: 3px solid #2469F6;
-    opacity: 0.9;
+    background: #2469F6 !important;
+    border: 3px solid #2469F6 !important;
+    opacity: 0.9 !important;
  }
  /* end of unchecking states */
