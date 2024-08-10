@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*global utility classes */
+.center {
+  /* centers containers */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* end of utility classes */
 .main_container {
-  position: relative;
   width: 578px;
   height: 794px;
-  top: -396px;
-  left: 168px;
-  padding: 85px 104px 383px 104px;
+  margin: 0 auto;
 }
 .form {
   position: relative;
@@ -18,13 +24,26 @@
   color: #1F2128;
   width: 370px;
   height: 326px;
+  margin: 0 auto;
   top: 85px;
-  left: 104px;
+  /* left: 104px; */
   padding: 10px 0px 10px 0px;
   border-radius: 6px;
   border: 1px solid #EEEEEE;
   box-shadow: 0px 8px 15px 0px #1414141F;
   box-shadow: 0px 0px 4px 0px #1414141A;
+}
+.border_container {
+  width: 370px;
+  height: 20px;
+  padding: 10px 15px 10px 15px;
+}
+.border {
+  width: 340px;
+  border: 0.7px solid rgba(205, 205, 205, 1)
+}
+.form:first-child {
+  height: 42px !important;
 }
 
 

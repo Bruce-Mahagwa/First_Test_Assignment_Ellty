@@ -8,7 +8,8 @@
     background: #FFCE22;
     cursor: pointer;
     position: relative;
-    left: 104px;
+    margin-left: 15px;
+    margin-top: 10px;
 }
 .submit_btn:hover {
     background: #FFD84D;

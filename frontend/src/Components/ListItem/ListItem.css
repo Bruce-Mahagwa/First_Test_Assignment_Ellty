@@ -9,7 +9,8 @@
 
 .list_item {
     width: 370px;
-    height: 42px;
+    /* height 41 applies to all other list items except the first header */
+    height: 41px;
     padding: 8px 15px 8px 22px;
     background: #FFFFFF;
     display: flex;
@@ -18,31 +19,39 @@
     cursor: pointer;
 }
 .page_name {
-    width: calc(370px - 25px);
-    height: 18px;
+    width: calc(370px - 35px);
+    height: 35px;
+    /* padding-top: 5px; */
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 .check_page {
-    width: 25px;
-    height: 25px;
-    border-radius: 6px;
-    border: 1px solid #CDCDCD;
+    width: 35px;
+    height: 35px;
     opacity: 0.6;
     position: relative;
+    cursor: pointer;
 }
 .checkbox {
-    width: 100%;
-    height: 100%;
+    width: 25px;
+    height: 25px;
     max-width: 25px;
+    /* position: relative; */
+    position: absolute;
     /* makes the default styling disappear to hide borders */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border: none;
     outline: none;
     cursor: pointer;
+    border: 1px solid #CDCDCD !important;
+    border-radius: 6px;
     /* increase z index of the input */
-    z-index: 200000000;
+    z-index: 2000;
+}
+.check_box label {
+    cursor: pointer;
 }
 .check_page_container_large {
     position: absolute;
@@ -64,10 +73,11 @@
     position: absolute;
     display: block;
     opacity: 0;
+    cursor: pointer;
     z-index: -20000;
 }
 /* hover states */
-.check_page:hover {
+.checkbox:hover {
     border: 1px solid #BDBDBD;
 }
 .list_item:hover .tick_icon {
@@ -100,23 +110,27 @@
     border: 1px solid #FFFFFF
  }
  .check_page:has(.checkbox:checked) {
+    opacity: 0.9;
+ }
+ .checkbox:checked {
     background: #2469F6;
     opacity: 0.9;
  }
- .checkbox:checked +.tick_icon {
-    color: #FFFFFF;
-    opacity: 1;
+ .checkbox:checked + label .tick_icon {
+    color: #FFFFFF !important;
+    opacity: 0.9;
     width: 22px;
     height: 22px;
+    z-index: 2000;
  }
-.check_page:has(.checkbox:checked:is(:hover)) {
+.checkbox:checked:is(:hover) {
     background: #5087F8;
 }
 
  /* end of checked states */
 
  /* unchecking states */
- .blue-background-checked .check_page {
+ .blue-background-checked .check_box {
     /* blue-background-state is a utility class that will be added dynamically when the user clicks to uncheck a checkbox */
     background: #2469F6;
     border: 3px solid #2469F6;
